@@ -61,21 +61,18 @@ const InitialLayout = () => {
     }
   }, [loaded]);
 
-  // useEffect(() => {
-  //   if (!isLoaded) return;
-
-  //   const inAuthGroup = segments[0] === "(authenticated)";
-
-  //   if (isSignedIn && !inAuthGroup) {
-  //     router.replace("/(authenticated)/(tabs)/home");
-  //   } else if (!isSignedIn) {
-  //     router.replace("/");
-  //   }
-  // }, [isSignedIn]);
-
   useEffect(() => {
-    console.log("is signed in? ", isSignedIn);
+    if (!isLoaded) return;
+
+    const inAuthGroup = segments[0] === "(authenticated)";
+
+    if (isSignedIn && !inAuthGroup) {
+      router.replace("/(authenticated)/(tabs)/home");
+    } else if (!isSignedIn) {
+      router.replace("/");
+    }
   }, [isSignedIn]);
+
 
   if (!loaded || !isLoaded) {
     return (

@@ -61,7 +61,6 @@ const Page = () => {
           // onPress={clearTransactions}
         />
         <RoundBtn icon={"list"} text={"Details"} />
-        <Dropdown />
       </View>
 
       <Text style={defaultStyles.sectionHeader}>Transactions</Text>

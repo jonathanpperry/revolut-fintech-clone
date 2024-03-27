@@ -21,12 +21,12 @@ const Page = () => {
   const headerHeight = useHeaderHeight();
 
   const onAddMoney = () => {
-    runTransaction({
-      id: Math.random().toString(),
-      amount: Math.floor(Math.random() * 1000) * (Math.random() > 0.5 ? 1 : -1),
-      date: new Date(),
-      title: "Added money",
-    });
+    // runTransaction({
+    //   id: Math.random().toString(),
+    //   amount: Math.floor(Math.random() * 1000) * (Math.random() > 0.5 ? 1 : -1),
+    //   date: new Date(),
+    //   title: "Added money",
+    // });
   };
 
   return (
@@ -38,7 +38,7 @@ const Page = () => {
     >
       <View style={styles.account}>
         <View style={styles.row}>
-          <Text style={styles.balance}>{balance()}</Text>
+          {/* <Text style={styles.balance}>{balance()}</Text> */}
           <Text style={styles.currency}>€</Text>
         </View>
         <TouchableOpacity
@@ -58,7 +58,7 @@ const Page = () => {
         <RoundBtn
           icon={"refresh"}
           text={"Exchange"}
-          onPress={clearTransactions}
+          // onPress={clearTransactions}
         />
         <RoundBtn icon={"list"} text={"Details"} />
         <Dropdown />
@@ -66,12 +66,12 @@ const Page = () => {
 
       <Text style={defaultStyles.sectionHeader}>Transactions</Text>
       <View style={styles.transactions}>
-        {transactions.length === 0 && (
+        {/* {transactions.length === 0 && (
           <Text style={{ padding: 14, color: Colors.gray }}>
             No transactions yet
           </Text>
-        )}
-        {transactions.map((transaction: any) => (
+        )} */}
+        {/* {transactions.map((transaction: any) => (
           <View
             key={transaction.id}
             style={{ flexDirection: "row", alignItems: "center", gap: 16 }}
@@ -92,7 +92,7 @@ const Page = () => {
             </View>
             <Text>{transaction.amount}€</Text>
           </View>
-        ))}
+        ))} */}
       </View>
       <Text style={defaultStyles.sectionHeader}>Widgets</Text>
       <WidgetList />
