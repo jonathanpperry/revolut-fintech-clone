@@ -1,3 +1,4 @@
+import CustomHeader from "@/components/CustomHeader";
 import Colors from "@/constants/Colors";
 import { FontAwesome } from "@expo/vector-icons";
 import { BlurView } from "expo-blur";
@@ -14,7 +15,7 @@ const Layout = () => {
             tint={"extraLight"}
             style={{
               flex: 1,
-              backgroundColor: "rgba(0,0,0,0.05)",
+              backgroundColor: "rgba(0, 0, 0, 0.05)",
             }}
           />
         ),
@@ -36,7 +37,7 @@ const Layout = () => {
           tabBarIcon: ({ size, color }) => (
             <FontAwesome name="registered" size={size} color={color} />
           ),
-          // header: () => <CustomHeader />,
+          header: () => <CustomHeader />,
           headerTransparent: true,
         }}
       />
@@ -65,7 +66,7 @@ const Layout = () => {
           tabBarIcon: ({ size, color }) => (
             <FontAwesome name="bitcoin" size={size} color={color} />
           ),
-          // header: () => <CustomHeader />,
+          header: () => <CustomHeader />,
           headerTransparent: true,
         }}
       />
