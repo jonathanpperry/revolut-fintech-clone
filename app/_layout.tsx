@@ -11,9 +11,9 @@ import { TouchableOpacity, Text, View, ActivityIndicator } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 const CLERK_PUBLISHABLE_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
 import * as SecureStore from "expo-secure-store";
-// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 // import { UserInactivityProvider } from "@/context/UserInactivity";
-// const queryClient = new QueryClient();
+const queryClient = new QueryClient();
 
 // Cache the Clerk JWT
 const tokenCache = {
@@ -67,12 +67,11 @@ const InitialLayout = () => {
     const inAuthGroup = segments[0] === "(authenticated)";
 
     if (isSignedIn && !inAuthGroup) {
-      router.replace("/(authenticated)/(tabs)/home");
+      router.replace("/(authenticated)/(tabs)/crypto");
     } else if (!isSignedIn) {
       router.replace("/");
     }
   }, [isSignedIn]);
-
 
   if (!loaded || !isLoaded) {
     return (
@@ -204,14 +203,14 @@ const RootLayoutNav = () => {
       publishableKey={CLERK_PUBLISHABLE_KEY!}
       tokenCache={tokenCache}
     >
-      {/*    <QueryClientProvider client={queryClient}>
-         <UserInactivityProvider> */}
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <StatusBar style="light" />
-        <InitialLayout />
-      </GestureHandlerRootView>
-      {/*      </UserInactivityProvider>
-       </QueryClientProvider> */}
+      <QueryClientProvider client={queryClient}>
+        {/* <UserInactivityProvider> */}
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <StatusBar style="light" />
+          <InitialLayout />
+        </GestureHandlerRootView>
+        {/* </UserInactivityProvider> */}
+      </QueryClientProvider>
     </ClerkProvider>
   );
 };
