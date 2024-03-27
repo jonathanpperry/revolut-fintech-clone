@@ -3,7 +3,7 @@ import RoundBtn from "@/components/RoundBtn";
 import WidgetList from "@/components/SortableList/WidgetList";
 import Colors from "@/constants/Colors";
 import { defaultStyles } from "@/constants/Styles";
-// import { useBalanceStore } from "@/store/balanceStore";
+import { useBalanceStore } from "@/store/balanceStore";
 import { Ionicons } from "@expo/vector-icons";
 import {
   View,
@@ -16,17 +16,17 @@ import {
 import { useHeaderHeight } from "@react-navigation/elements";
 
 const Page = () => {
-  // const { balance, runTransaction, transactions, clearTransactions } =
-  //   useBalanceStore();
+  const { balance, runTransaction, transactions, clearTransactions } =
+    useBalanceStore();
   const headerHeight = useHeaderHeight();
 
   const onAddMoney = () => {
-    // runTransaction({
-    //   id: Math.random().toString(),
-    //   amount: Math.floor(Math.random() * 1000) * (Math.random() > 0.5 ? 1 : -1),
-    //   date: new Date(),
-    //   title: "Added money",
-    // });
+    runTransaction({
+      id: Math.random().toString(),
+      amount: Math.floor(Math.random() * 1000) * (Math.random() > 0.5 ? 1 : -1),
+      date: new Date(),
+      title: "Added money",
+    });
   };
 
   return (
@@ -38,7 +38,7 @@ const Page = () => {
     >
       <View style={styles.account}>
         <View style={styles.row}>
-          {/* <Text style={styles.balance}>{balance()}</Text> */}
+          <Text style={styles.balance}>{balance()}</Text>
           <Text style={styles.currency}>€</Text>
         </View>
         <TouchableOpacity
@@ -58,15 +58,15 @@ const Page = () => {
         <RoundBtn
           icon={"refresh"}
           text={"Exchange"}
-          // onPress={clearTransactions}
+          onPress={clearTransactions}
         />
         <RoundBtn icon={"list"} text={"Details"} />
-        {/* <Dropdown /> */}
+        <Dropdown />
       </View>
 
       <Text style={defaultStyles.sectionHeader}>Transactions</Text>
       <View style={styles.transactions}>
-        {/* {transactions.length === 0 && (
+        {transactions.length === 0 && (
           <Text style={{ padding: 14, color: Colors.gray }}>
             No transactions yet
           </Text>
@@ -92,7 +92,7 @@ const Page = () => {
             </View>
             <Text>{transaction.amount}€</Text>
           </View>
-        ))} */}
+        ))}
       </View>
       <Text style={defaultStyles.sectionHeader}>Widgets</Text>
       <WidgetList />
