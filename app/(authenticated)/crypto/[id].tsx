@@ -25,10 +25,10 @@ import Animated, {
   useAnimatedProps,
 } from "react-native-reanimated";
 
-const DATA = Array.from({ length: 31 }, (_, i) => ({
-  day: i,
-  highTmp: 40 + 30 * Math.random(),
-}));
+// const DATA = Array.from({ length: 31 }, (_, i) => ({
+//   day: i,
+//   highTmp: 40 + 30 * Math.random(),
+// }));
 
 Animated.addWhitelistedNativeProps({ text: true });
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);

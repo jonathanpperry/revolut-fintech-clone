@@ -59,8 +59,17 @@
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
 				7F6F7A665DE44BE69FEDA90D /* noop-file.swift */,
 				4326DA03863A494CB326C5F9 /* fintech-Bridging-Header.h */,
+				18FECCCF1AD3409CB895CF5C /* DynamicAppIcons */,
 			);
 			name = fintech;
+			sourceTree = "<group>";
+		};
+		18FECCCF1AD3409CB895CF5C /* DynamicAppIcons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DynamicAppIcons;
+			path = "";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
