@@ -72,7 +72,7 @@ const Page = () => {
   return (
     <SafeAreaView>
       <Text style={styles.greeting}>Welcome back, {firstName}.</Text>
-      
+
       <Animated.View style={[styles.codeView, style]}>
         {codeLength.map((_, index) => (
           <View

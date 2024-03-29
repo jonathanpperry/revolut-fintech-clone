@@ -42,14 +42,13 @@ const Page = () => {
   }, [code]);
 
   const verifyCode = async () => {
-    console.log('verify code')
     try {
       await signUp!.attemptPhoneNumberVerification({
         code,
       });
       await setActive!({ session: signUp!.createdSessionId });
     } catch (err) {
-      console.log("error", JSON.stringify(err, null, 2));
+      console.error("error", JSON.stringify(err, null, 2));
       if (isClerkAPIResponseError(err)) {
         Alert.alert("Error", err.errors[0].message);
       }
@@ -57,7 +56,6 @@ const Page = () => {
   };
 
   const verifySignIn = async () => {
-    console.log('verify sign in')
     try {
       await signIn!.attemptFirstFactor({
         strategy: "phone_code",
@@ -65,7 +63,7 @@ const Page = () => {
       });
       await setActive!({ session: signIn!.createdSessionId });
     } catch (err) {
-      console.log("error", JSON.stringify(err, null, 2));
+      console.error("error", JSON.stringify(err, null, 2));
       if (isClerkAPIResponseError(err)) {
         Alert.alert("Error", err.errors[0].message);
       }

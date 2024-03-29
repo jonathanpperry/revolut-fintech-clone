@@ -13,7 +13,35 @@
     <key>CFBundleIcons</key>
     <dict>
       <key>CFBundleAlternateIcons</key>
-      <dict/>
+      <dict>
+        <key>default</key>
+        <dict>
+          <key>CFBundleIconFiles</key>
+          <array>
+            <string>default-Icon-60x60</string>
+          </array>
+          <key>UIPrerenderedIcon</key>
+          <true/>
+        </dict>
+        <key>dark</key>
+        <dict>
+          <key>CFBundleIconFiles</key>
+          <array>
+            <string>dark-Icon-60x60</string>
+          </array>
+          <key>UIPrerenderedIcon</key>
+          <true/>
+        </dict>
+        <key>vivids</key>
+        <dict>
+          <key>CFBundleIconFiles</key>
+          <array>
+            <string>vivids-Icon-60x60</string>
+          </array>
+          <key>UIPrerenderedIcon</key>
+          <true/>
+        </dict>
+      </dict>
       <key>CFBundlePrimaryIcon</key>
       <dict>
         <key>CFBundleIconFiles</key>
@@ -25,7 +53,35 @@
     <key>CFBundleIcons~ipad</key>
     <dict>
       <key>CFBundleAlternateIcons</key>
-      <dict/>
+      <dict>
+        <key>default</key>
+        <dict>
+          <key>CFBundleIconFiles</key>
+          <array>
+            <string>default-Icon-60x60</string>
+          </array>
+          <key>UIPrerenderedIcon</key>
+          <true/>
+        </dict>
+        <key>dark</key>
+        <dict>
+          <key>CFBundleIconFiles</key>
+          <array>
+            <string>dark-Icon-60x60</string>
+          </array>
+          <key>UIPrerenderedIcon</key>
+          <true/>
+        </dict>
+        <key>vivids</key>
+        <dict>
+          <key>CFBundleIconFiles</key>
+          <array>
+            <string>vivids-Icon-60x60</string>
+          </array>
+          <key>UIPrerenderedIcon</key>
+          <true/>
+        </dict>
+      </dict>
       <key>CFBundlePrimaryIcon</key>
       <dict>
         <key>CFBundleIconFiles</key>
@@ -83,13 +139,6 @@
     <string>Allow $(PRODUCT_NAME) to access your photos</string>
     <key>NSUserActivityTypes</key>
     <array>
-      <string>$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route</string>
-      <string>$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route</string>
-      <string>$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route</string>
-      <string>$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route</string>
-      <string>$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route</string>
-      <string>$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route</string>
-      <string>$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route</string>
       <string>$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route</string>
     </array>
     <key>UILaunchStoryboardName</key>
